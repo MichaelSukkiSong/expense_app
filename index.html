@@ -7,31 +7,34 @@
     <title>EXPENSE APP</title>
   </head>
   <body>
-    <h1>Expense Tracker</h1>
-    <span>Add A New Item:</span>
-    <form class="add">
-      <label for="name">Name:</label>
-      <input type="text" class="name_field" id="name" />
-      <br />
-      <label for="date">Date:</label>
-      <input type="date" class="date_field" id="date" />
-      <br />
-      <label for="amount">Amount:</label>
-      <input type="amount" class="amount_field" id="amount" />
-      <br />
-      <button type="submit">Add Expense</button>
-    </form>
+    <div class="box">
+      <h1>Expense Tracker</h1>
+      <span>Add A New Item:</span>
+      <div class="add_form">
+        <form class="add">
+          <label for="name">Name:</label>
+          <input type="text" class="name_field" id="name" />
+          <!-- <br /> -->
+          <label for="date">Date:</label>
+          <input type="date" class="date_field" id="date" />
+          <label for="amount">Amount:</label>
+          <input type="amount" class="amount_field" id="amount" />
+          <!-- <br /> -->
+          <button type="submit" class="add_btn">Add Expense</button>
+        </form>
+      </div>
 
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Date</th>
-        <th>Amount</th>
-      </tr>
-      <tr>
-        <td>No expenses added yet!</td>
-      </tr>
-    </table>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td colspan="3">No expenses added yet!</td>
+        </tr>
+      </table>
+    </div>
 
     <script src="index.js"></script>
   </body>
