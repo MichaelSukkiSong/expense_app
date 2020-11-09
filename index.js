@@ -8,7 +8,7 @@ const countNumTableElements = () => {
 const DisplaySentenceInTable = () => {
   const markup = `
         <tr>
-            <td class="sentence" colspan="3">No expenses added yet!</td>
+            <td class="sentence" colspan="4">No expenses added yet!</td>
         </tr>
       `;
   document.querySelector(".table").insertAdjacentHTML("beforeend", markup);
@@ -41,6 +41,7 @@ const controlAdd = () => {
     <td>${name}</td>
     <td>${date}</td>
     <td>${amount}</td>
+    <td><button class="delete_btn">X</button></td>
   `;
   document.querySelector(".table").insertAdjacentHTML("beforeend", markup);
   // 3) Judge number and display sentence in table
@@ -55,8 +56,6 @@ window.addEventListener("load", JudgeSentenceInTable(countNumTableElements()));
 
 // document.querySelector(".list_box").addEventListener("click", (e) => {
 //   if (e.target.matches(".delete_btn, .delete_btn *")) {
-//     // 1) delete from DB
-//     // 2) delete from UI
 //     e.target.parentNode.parentNode.removeChild(e.target.parentNode);
 //   }
 // });
