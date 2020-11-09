@@ -14,8 +14,8 @@ const DisplaySentenceInTable = () => {
   document.querySelector(".table").insertAdjacentHTML("beforeend", markup);
 };
 
-const JudgeSentenceInTable = (num) => {
-  if (num < 2) {
+const JudgeSentenceInTable = (num, limit = 2) => {
+  if (num < limit) {
     DisplaySentenceInTable();
   } else {
     if (document.querySelector(".sentence")) {
@@ -45,6 +45,7 @@ const controlAdd = () => {
   `;
   document.querySelector(".table").insertAdjacentHTML("beforeend", markup);
   // 3) Judge number and display sentence in table
+  //   console.log(countNumTableElements());
   JudgeSentenceInTable(countNumTableElements());
 };
 
@@ -54,8 +55,13 @@ window.addEventListener("load", JudgeSentenceInTable(countNumTableElements()));
 
 /* delete button */
 
-// document.querySelector(".list_box").addEventListener("click", (e) => {
-//   if (e.target.matches(".delete_btn, .delete_btn *")) {
-//     e.target.parentNode.parentNode.removeChild(e.target.parentNode);
-//   }
-// });
+document.querySelector(".table").addEventListener("click", (e) => {
+  if (e.target.matches(".delete_btn, .delete_btn *")) {
+    // 1) Delete row
+    const ele = e.target.parentNode.parentNode.parentNode;
+    ele.parentNode.removeChild(ele);
+    // 2) Judge number and display sentence in table
+    // console.log(countNumTableElements());
+    JudgeSentenceInTable(countNumTableElements(), 3);
+  }
+});
