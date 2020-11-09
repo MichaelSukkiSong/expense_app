@@ -40,7 +40,7 @@ const controlAdd = () => {
   const markup = `
     <td>${name}</td>
     <td>${date}</td>
-    <td>${amount}</td>
+    <td>$${amount}</td>
     <td><button class="delete_btn">X</button></td>
   `;
   document.querySelector(".table").insertAdjacentHTML("beforeend", markup);
